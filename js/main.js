@@ -9,8 +9,11 @@ function agregarCelular(){
 // Calcula el precio total con iva y le permite al usuario seleccionar en cuantas cuotas dessea pagar.
 function pagar(subtotal){
     let total = subtotal * 1.2
-    let cantidadCuotas = parseInt(prompt(`El total es: ${total}. 
-    En cuantas cuotas desea pagar?`))
+    let cantidadCuotas = -1
+    do{
+        cantidadCuotas = parseInt(prompt(`El total es: ${total}. 
+    En cuantas cuotas desea pagar (Elija un valor entre 1 y 12)?`))
+    }while(cantidadCuotas <= 0 || cantidadCuotas > 12)
     alert("Debera pagar " + total / cantidadCuotas + " durante los proximos " + cantidadCuotas + " meses.")
 }
 
@@ -20,13 +23,13 @@ function pagar(subtotal){
 let subtotal = 0;
 let opc = 1
 do{
-    opc = parseInt(prompt(`Ingrese una opcion:"
-        "1) Agregar celular"
-        "2) Quitar celular"
-        "3) Mostrar subtotal"
-        "4) Pagar"
-        "5) Vaciar carrito"
-        "0) Salir`))
+    opc = parseInt(prompt(`Ingrese una opcion:
+    1) Agregar celular
+    2) Quitar celular
+    3) Mostrar subtotal
+    4) Pagar
+    5) Vaciar carrito
+    0) Salir`))
 
     switch(opc){
         case 1:
