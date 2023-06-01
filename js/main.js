@@ -21,7 +21,7 @@ function pagar(subtotal){
     En cuantas cuotas desea pagar (Elija un valor entre 1 y 12)?`))
         if(cantidadCuotas <= 0){
             alert("La cantidad de cuotas debe ser mayor a cero")
-        } else if(cantidadCuotas > 12){
+        }else if(cantidadCuotas > 12){
             alert("Puede optar por pagar hasta en 12 cuotas")
         }
     }while(cantidadCuotas <= 0 || cantidadCuotas > 12)
@@ -64,4 +64,4 @@ do{
         default:
             alert("Opcion invalida, por favor ingrese una presente en el menu")
     }
-}while(opc != 0)
+}while(opc !== 0)
