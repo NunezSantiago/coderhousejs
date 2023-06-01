@@ -2,7 +2,13 @@
 function agregarCelular(){
     let marca = prompt("Ingrese marca: ")
     let modelo = prompt("Ingrese modelo: ")
-    let precio = parseInt(prompt("Ingrese precio: "))
+    let precio = 0
+    while(precio <= 0){
+        precio = parseInt(prompt("Ingrese precio: "))
+        if(precio <= 0){
+            alert("Ingrese un precio valido")
+        }
+    }
     return precio
 }
 
@@ -13,6 +19,11 @@ function pagar(subtotal){
     do{
         cantidadCuotas = parseInt(prompt(`El total es: ${total}. 
     En cuantas cuotas desea pagar (Elija un valor entre 1 y 12)?`))
+        if(cantidadCuotas <= 0){
+            alert("La cantidad de cuotas debe ser mayor a cero")
+        } else if(cantidadCuotas > 12){
+            alert("Puede optar por pagar hasta en 12 cuotas")
+        }
     }while(cantidadCuotas <= 0 || cantidadCuotas > 12)
     alert("Debera pagar " + total / cantidadCuotas + " durante los proximos " + cantidadCuotas + " meses.")
 }
