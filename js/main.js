@@ -54,6 +54,7 @@ do{
         break
         case 4:
             pagar(subtotal)
+            subtotal = 0
         break
         case 5:
             subtotal = 0;
